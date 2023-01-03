@@ -1,0 +1,29 @@
+name = "pii"
+type = "javascript"
+
+zone_id = "xxxxx"
+account_id = "xxxx"
+route = "pii.macrometa.io/*"
+workers_dev = false
+
+# FIXME: change this to proper URL
+[vars]
+FEDERATION_URL="https://api-smoke4.eng.macrometa.io"
+PRIVACY_SERVICE_URL="http://privacy-service.eng.macrometa.io:3000"
+DATABUNKER_ROOTTOKEN="xxxx"
+TWILIO_ACCOUNT_SID="xxxx"
+TWILIO_AUTH_TOKEN="xxxx"
+TWILIO_MESSAGE_ENDPOINT="https://api.twilio.com/2010-04-01/Accounts/"
+TWILIO_NUMBER="XXXX"
+MM_API_KEY="xxxx"
+
+[site]
+bucket = "./public"
+entry-point = "."
+
+[build]
+command = "npm run build:worker"
+watch_dir = "build/index.js"
+
+[build.upload]
+format="service-worker"
